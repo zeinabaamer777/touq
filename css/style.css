@@ -55,8 +55,10 @@ button:focus {
   outline: unset; }
 
 .btn-flat, .btn {
-  background-color: #DBB49B;
-  transition: all 300ms ease-in-out; }
+  background-color: transparent;
+  border: 2px solid #DBB49B;
+  transition: all 300ms ease-in-out;
+  color: #DBB49B; }
 
 button,
 button:focus {
@@ -152,9 +154,14 @@ a {
 .btn, .btn-flat {
   position: relative;
   border-radius: 12px;
-  font-size: 16px;
   padding: 10px 50px;
-  color: #fff; }
+  font-size: 18px;
+  font-weight: bold;
+  font-family: HelveticaNeueBold, sans-serif; }
+  .btn:hover, .btn-flat:hover {
+    background-color: #DBB49B;
+    border-color: transparent;
+    color: #fff; }
 
 .lead {
   margin: 10px 0; }
