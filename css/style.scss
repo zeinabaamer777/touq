@@ -235,13 +235,16 @@ a {
 .lead {
   margin: 10px 0;
 }
+
+/* *********************************************** */
+/*            =====  Navbar style =====
+* **************************************************/
 .navbar{
   //background-color: rgba($dark-dim-gray,0.67);
   z-index: 1000;
   //transition: all 300ms  linear;
   -webkit-transition: all 300ms  linear;
   -moz-transition: all 300ms  linear;
-  -ms-transition:  all 300ms  linear;
   -o-transition:  all 300ms  linear;
   transition: all 300ms  linear;
   padding: .1rem 1rem;
@@ -351,7 +354,6 @@ a {
     -ms-box-shadow: 0 0 9px 0 rgba(24, 57, 78, 0.5);
     box-shadow: 0 0 9px 0 rgba(24, 57, 78, 0.5);
     padding: 0;
-    margin-top: 0;
     margin: 0;
     .navbar-brand {
      padding: 0;
@@ -369,6 +371,10 @@ a {
     }
   }
 }
+
+/* *********************************************** */
+/*            =====  Header =====
+* **************************************************/
 header {
   position: relative;
   // background-color: black;
@@ -410,7 +416,10 @@ header {
     background-color: rgba($inverse-color, .5);
     z-index: 1;
   }
-  //  to bottom button
+
+  /* *********************************************** */
+  /*            =====  to bottom button =====
+  * **************************************************/
 
   .scroll-down {
     position: absolute;
@@ -426,11 +435,8 @@ header {
     z-index: 2;
     -webkit-animation: bounce 2s infinite 2s;
     animation: bounce 2s infinite 2s;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
     opacity: .9;
-    -webkit-transition: all .5s ease-in 3s;
-    transition: all .5s ease-in 3s;
+    @include transition(all,s,ease-in-out);
     &::before {
       position: absolute;
       top: calc(50% - 8px);
@@ -441,7 +447,7 @@ header {
       height: 16px;
       content: "";
       border: 2px solid $white;
-      border-width: 0px 0 2px 2px;
+      border-width: 0 0 2px 2px;
     }
   }
   .main-head{
@@ -516,8 +522,9 @@ header {
     transform: translateY(-5px);
   }
 }
-
-//  services section
+/* *********************************************** */
+/*            =====  services section =====
+* **************************************************/
 .services{
   h2{
     margin-bottom: 20px;
@@ -572,7 +579,10 @@ header {
   }
 }
 
-//  start our work section style.
+
+/* *********************************************** */
+/*      ===== //  start our work section style. =====
+* **************************************************/
 .our-work {
   figure {
     width: 100%;
@@ -613,10 +623,7 @@ header {
     }
 
     &:hover{
-      img{
-        -webkit-transform: scale3d(1.1, 1.1, 1);
-        transform: scale3d(1.1, 1.1, 1);
-      }
+
       figcaption{
         display: block;
 
@@ -624,7 +631,11 @@ header {
     }
   }
 }
-// meet Our Team
+
+/* *********************************************** */
+/*            ===== meet Our Team =====
+* **************************************************/
+
 .our-team{
   position: relative;
   display: block;
@@ -669,7 +680,7 @@ header {
               width: 100%;
               height: 100%;
               border-radius: 50%;
-
+              @include transition(all,.3s, ease-in-out);
             }
             figcaption {
               padding: 2em;
@@ -725,13 +736,13 @@ header {
               transform-origin: 50%;
             }
             figcaption::before {
+              content: '';
               position: absolute;
               top: 50%;
               left: 50%;
               width: 120px;
               height: 120px;
               border: 2px solid $white;
-              content: '';
               opacity: 0;
               -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
               transition: opacity 0.35s, transform 0.35s;
@@ -739,7 +750,7 @@ header {
               transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
               -webkit-transform-origin: 50%;
               transform-origin: 50%;
-              background-color: rgba($inverse-color,.5);
+              background-color: rgba($primary-color,.8);
             }
             p {
               width: 100px;
@@ -747,7 +758,7 @@ header {
               font-size: 121%;
               line-height: 2;
               a {
-                color: #fff;
+                color: $white;
                 &:hover, &:focus {
                   opacity: 0.6;
                 }
@@ -775,7 +786,10 @@ header {
               }
             }
             &:hover {
-              background-color: black;
+              img{
+                -webkit-transform: scale3d(1.1, 1.1, 1);
+                transform: scale3d(1.1, 1.1, 1);
+              }
               figcaption::before {
                 opacity: 1;
                 -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
@@ -789,12 +803,10 @@ header {
               p i:empty {
                 -webkit-transform: translate3d(0, 0, 0);
                 transform: translate3d(0, 0, 0);
-                /* just because it's stronger than nth-child */
                 opacity: 1;
               }
             }
           }
-          /* Anchor will cover the whole item by default */
         }
       }
       .owl-nav{
@@ -865,7 +877,7 @@ header {
   100% {transform: rotate(360deg);}
 }
 
-/*==============ROTATE-REV=================*/
+/*============== ROTATE-REV =================*/
 
 @-moz-keyframes rotate-rev{
   0% {-moz-transform: rotate(0deg);}
@@ -882,7 +894,8 @@ header {
   100% {transform: rotate(-360deg);}
 }
 
-/*==============PULSE======================*/
+/*==============  PULSE  ======================*/
+
 
 @-moz-keyframes pulse{
   0% {
